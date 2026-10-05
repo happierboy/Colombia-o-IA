@@ -1,7 +1,7 @@
 // Colombia o IA: versión web del juego original en Java.
 // Sin dependencias ni Node.js: se abre index.html directamente en el navegador.
 
-const TOTAL_RONDAS = 6;
+const TOTAL_RONDAS = 10;
 
 // Equivalente a Frase.java
 class Frase {
@@ -27,9 +27,13 @@ class SeleccionDeOpciones {
       new Frase("La votacion para prohibir la chancleta en fiestas patronales", "ia"),
       new Frase("El articulado de TransMilenio atrapado en el parqueadero de un centro comercial", "ia"),
       new Frase("El festival de la empanada con embajadores invitados por error", "ia"),
+      new Frase("El peaje comunitario que aceptaba plátano verde como tarifa", "ia"),
+      new Frase("El loro citado como testigo que fue expulsado por desacato", "ia"),
       new Frase("Policía multa a quien compre (empanadas) en la calle", "col"),
       new Frase("Joven fingió embarazo de nueve bebés con una barriga hecha de trapos", "col"),
       new Frase("Antanas Mockus bajándose los pantalones en pleno Congreso", "col"),
+      new Frase("El presidente llamo al creador de una novela para definir el rumbo de la protagonista", "col"),
+      new Frase("Hipopótamos caminando por las calles de un pueblo en Antioquia", "col")
     ];
   }
 
