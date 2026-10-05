@@ -11,10 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script type="module">
-      import { inject } from "https://cdn.jsdelivr.net/npm/@vercel/analytics/+esm";
-        inject();
-  </script>
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <div class="marquee" aria-hidden="true">
