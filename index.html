@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colombia o IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-pista">
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+        <span>Colombia o IA ✦ adivina si es real o inventada por IA ✦</span>
+      </div>
+    </div>
+
+    <header class="nav">
+      <span class="logo" aria-hidden="true">CI</span>
+      <div class="pastillas">
+        <span id="ronda" class="pastilla">Ronda 1 de 6</span>
+        <span id="aciertos" class="pastilla">Aciertos: 0</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-contenido">
+        <span class="sticker moneda" aria-hidden="true">?</span>
+        <h1 class="display">Colombia o IA</h1>
+        <p class="tagline">holaaaaaaaaaaaa</p>
+      </div>
+    </section>
+
+    <section class="juego">
+      <div class="juego-contenido">
+        <div class="columna-juego">
+          <div class="tarjeta-frase" aria-live="polite">
+            <p class="etiqueta">colombia o ia?</p>
+            <p id="frase" class="frase"></p>
+          </div>
+
+          <div class="botones">
+            <button type="button" data-respuesta="col">col</button>
+            <button type="button" data-respuesta="ia">ia</button>
+          </div>
+
+          <p id="retroalimentacion" class="retroalimentacion" aria-live="polite"></p>
+
+          <img
+            class="imagen-fallo"
+            src="soyunfracasado.jpg"
+            alt="Personaje de dibujos animados caminando sobre un prado verde"
+          />
+
+          <button type="button" id="reiniciar" class="boton-principal" hidden>Jugar otra vez</button>
+        </div>
+
+        <figure class="tarjeta-foto">
+          <img
+            src="pexels-photo-15847154-4120609274.jpg"
+            alt="Bandera de Colombia ondeando sobre una muralla de ladrillo, con edificios y la bahía al fondo"
+            loading="lazy"
+          />
+          <figcaption>Bandera de Colombia</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <script src="game.js"></script>
+  </body>
+</html>

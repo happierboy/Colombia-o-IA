@@ -1,0 +1,367 @@
+/* Estilo según DESIGN.md (Slush): fondo pastel, pastillas con borde negro de 1px,
+   tarjetas redondeadas de 20px, sin sombras ni gradientes. Display en Bowlby One
+   (sustituto de Lateral 800). Texto en Inter (sustituto de Aeonik Pro). */
+
+:root {
+  --color-carbon: #000000;
+  --color-paper-white: #ffffff;
+  --color-sky-wash: #dceeff;
+  --color-concrete-gray: #cccccc;
+  --color-soft-mist: #e9e9e9;
+  --color-mint-pop: #55db9c;
+  --color-lavender: #e9ccff;
+  --color-ember: #fb4903;
+  --color-sunburst: #ffd731;
+
+  --font-display: "Bowlby One", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --page-max-width: 1440px;
+  --section-gap: 48px;
+  --card-padding: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.39;
+  letter-spacing: -0.01em;
+  color: var(--color-carbon);
+  background: var(--color-paper-white);
+  font-feature-settings: "ss01" on, "tnum";
+}
+
+/* ---- Marquesina ---- */
+
+.marquee {
+  overflow: hidden;
+  background: var(--color-carbon);
+  color: var(--color-paper-white);
+  border-bottom: 1px solid var(--color-carbon);
+}
+
+.marquee-pista {
+  display: inline-flex;
+  white-space: nowrap;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.56;
+  letter-spacing: 0.032em;
+  text-transform: uppercase;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-pista span {
+  padding-right: 48px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-pista {
+    animation: none;
+  }
+}
+
+/* ---- Navegación ---- */
+
+.nav {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-carbon);
+  border-radius: 1600px;
+  background: var(--color-paper-white);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.032em;
+}
+
+.pastillas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pastilla {
+  padding: 15px 12px;
+  border: 1px solid var(--color-carbon);
+  border-radius: 1600px;
+  background: var(--color-paper-white);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.032em;
+}
+
+/* ---- Hero ---- */
+
+.hero {
+  background: var(--color-sky-wash);
+  padding: var(--section-gap) 24px;
+}
+
+.hero-contenido {
+  position: relative;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.display {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(64px, 16vw, 200px);
+  line-height: 0.8;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.tagline {
+  margin: 24px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Sticker: forma plana con borde negro de 1px */
+.sticker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-carbon);
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.moneda {
+  top: -8px;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: var(--color-sunburst);
+  font-size: 56px;
+  transform: rotate(-8deg);
+}
+
+/* ---- Juego ---- */
+
+.juego {
+  background: var(--color-paper-white);
+  padding: var(--section-gap) 24px;
+}
+
+.juego-contenido {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--section-gap);
+  align-items: start;
+}
+
+.columna-juego {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tarjeta-frase {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 260px;
+  padding: var(--card-padding);
+  border: 1px solid var(--color-carbon);
+  border-radius: 20px;
+  background: var(--color-lavender);
+}
+
+.etiqueta {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.56;
+  letter-spacing: -0.01px;
+}
+
+.frase {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+/* ---- Botones ---- */
+
+.botones {
+  display: flex;
+  gap: 12px;
+}
+
+.botones button,
+.boton-principal {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--color-carbon);
+  border-radius: 1600px;
+  background: var(--color-carbon);
+  color: var(--color-paper-white);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.032em;
+  cursor: pointer;
+}
+
+.botones button:hover:not(:disabled),
+.boton-principal:hover {
+  background: var(--color-paper-white);
+  color: var(--color-carbon);
+}
+
+.botones button:disabled {
+  background: var(--color-soft-mist);
+  color: var(--color-carbon);
+  cursor: not-allowed;
+}
+
+.botones button:focus-visible,
+.boton-principal:focus-visible {
+  outline: 2px solid var(--color-carbon);
+  outline-offset: 3px;
+}
+
+/* ---- Retroalimentación: chips decorativos (sin verde como estado de éxito) ---- */
+
+.retroalimentacion {
+  align-self: center;
+  margin: 0;
+  padding: 12px 24px;
+  border: 1px solid var(--color-carbon);
+  border-radius: 1600px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.032em;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.retroalimentacion:empty {
+  display: none;
+}
+
+.retroalimentacion.ok {
+  background: var(--color-mint-pop);
+}
+
+.retroalimentacion.ok::before {
+  content: "✓ ";
+}
+
+.retroalimentacion.mal {
+  background: var(--color-ember);
+}
+
+/* La imagen aparece debajo del texto solo cuando la respuesta es incorrecta */
+.imagen-fallo {
+  display: none;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--color-carbon);
+  border-radius: 20px;
+}
+
+.retroalimentacion.mal ~ .imagen-fallo {
+  display: block;
+}
+
+.boton-principal {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.boton-principal[hidden] {
+  display: none;
+}
+
+/* ---- Foto ---- */
+
+.tarjeta-foto {
+  margin: 0;
+  border: 1px solid var(--color-carbon);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-paper-white);
+}
+
+.tarjeta-foto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.tarjeta-foto figcaption {
+  padding: 12px 24px;
+  border-top: 1px solid var(--color-carbon);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.56;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 900px) {
+  .juego-contenido {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tarjeta-foto img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .moneda {
+    width: 72px;
+    height: 72px;
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 19px;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
+}
