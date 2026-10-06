@@ -290,7 +290,8 @@ body {
 }
 
 /* La imagen aparece debajo del texto solo cuando la respuesta es incorrecta */
-.imagen-fallo {
+.imagen-fallo,
+.imagen-acierto {
   display: none;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -299,7 +300,8 @@ body {
   border-radius: 20px;
 }
 
-.retroalimentacion.mal ~ .imagen-fallo {
+.retroalimentacion.mal ~ .imagen-fallo,
+.retroalimentacion.ok ~ .imagen-acierto {
   display: block;
 }
 
