@@ -1,8 +1,6 @@
 // Colombia o IA: versión web del juego original en Java.
 // Sin dependencias ni Node.js: se abre index.html directamente en el navegador.
 
-const TOTAL_RONDAS = 10;
-
 // Equivalente a Frase.java
 class Frase {
   constructor(mensaje, clasificacion) {
@@ -51,6 +49,7 @@ class Juego {
   constructor(banco, aleatorio = Math.random) {
     this.banco = banco;
     this.aleatorio = aleatorio;
+    this.totalRondas = this.banco.getListaIa().length;
     this.orden = [];
     this.reiniciar();
   }
@@ -77,7 +76,7 @@ class Juego {
   }
 
   haTerminado() {
-    return this.ronda >= TOTAL_RONDAS;
+    return this.ronda >= this.totalRondas;
   }
 
   // Equivalente a Main.comprobar: compara la respuesta exacta ("col" / "ia")
@@ -107,12 +106,11 @@ if (typeof document !== "undefined") {
     botones: document.querySelectorAll("[data-respuesta]"),
     reiniciar: document.getElementById("reiniciar"),
   };
-
   const juego = new Juego(new SeleccionDeOpciones());
   let fraseActual = null;
 
   function actualizarMarcador() {
-    elementos.ronda.textContent = `Ronda ${Math.min(juego.ronda + 1, TOTAL_RONDAS)} de ${TOTAL_RONDAS}`;
+    elementos.ronda.textContent = `Ronda ${Math.min(juego.ronda + 1, juego.totalRondas)} de ${juego.totalRondas}`;
     elementos.aciertos.textContent = `Aciertos: ${juego.aciertos}`;
   }
 
